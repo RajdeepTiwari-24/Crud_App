@@ -4,7 +4,7 @@ var Userdb = require('../model/model');
 exports.create = (req,res)=>{
     // validate request
     if(!req.body){
-        res.status(400).send({message : "Data toh daal bhai!! kya chahta hai"});
+        res.status(400).send({message : "Where is Data"});
         return;
     }
 
@@ -21,7 +21,7 @@ exports.create = (req,res)=>{
         .save(user)
         .then(data => {
             // res.send(data)
-            res.redirect('/add-user');
+            res.redirect('/');
         })
         .catch(err =>{
             res.status(500).send({
@@ -77,7 +77,8 @@ exports.update = (req, res)=>{
                 res.status(404).send({ message : `Cannot Update user with ${id}. Maybe user not found!`})
             }
             else{
-                res.send(data)
+                res.send(data);
+               // res.redirect('/');
             }
         })
         .catch(err =>{

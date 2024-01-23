@@ -10,6 +10,14 @@ dotenv.config({path:'config.env'})
 const PORT = process.env.PORT || 8080
 
 //log requests
+
+
+
+
+
+
+
+
 app.use(morgan('tiny'));
 connectDB();
 //parse request to body parser
@@ -28,5 +36,5 @@ app.use('/js',express.static(path.resolve(__dirname,"assests/js")))
 app.use('/',require('./server/routes/router'))
 
 app.listen(PORT,()=>{
-    console.log(`Server is running on http://localhost:${3000}`)
+    console.log(`Server is running Port:${8080}`)
 });
